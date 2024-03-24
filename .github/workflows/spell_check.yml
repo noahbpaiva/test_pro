@@ -6,9 +6,6 @@ on:
 
 jobs:
   spellcheck:
-    defaults:
-      run:
-        working-directory: ./lib
     runs-on: ubuntu-latest
     steps:
       - name: 📚 Git Checkout
@@ -16,3 +13,6 @@ jobs:
 
       - name: 🚀 Run Spell Check
         uses: streetsidesoftware/cspell-action@v6
+        with:
+          config: .github/cspell.json
+          root: ./lib
