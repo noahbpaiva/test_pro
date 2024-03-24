@@ -1,0 +1,84 @@
+[
+  {
+    "name": "bug",
+    "color": "d73a4a",
+    "description": "Something isn't working as expected"
+  },
+  {
+    "name": "chore",
+    "color": "d2d2d2",
+    "description": "Changes that don't modify source code or tests"
+  },
+  {
+    "name": "documentation",
+    "color": "0075ca",
+    "description": "Improvements or additions to documentation",
+    "aliases": [
+      "docs"
+    ]
+  },
+  {
+    "name": "duplicate",
+    "color": "758f7c",
+    "description": "This issue or pull request already exists"
+  },
+  {
+    "name": "feature",
+    "color": "14caec",
+    "description": "A new feature or request",
+    "aliases": [
+      "enhancement"
+    ]
+  },
+  {
+    "name": "p1",
+    "color": "990000",
+    "description": "High-priority issues at the top of the work list"
+  },
+  {
+    "name": "p2",
+    "color": "770000",
+    "description": "Important issues not at the top of the work list"
+  },
+  {
+    "name": "p3",
+    "color": "550000",
+    "description": "Issues that we currently consider unimportant"
+  },
+  {
+    "name": "performance",
+    "color": "f9d0c4",
+    "description": "Changes that improve performance"
+  },
+  {
+    "name": "refactor",
+    "color": "e29a12",
+    "description": "A code change that neither fixes a bug nor add a feature"
+  },
+  {
+    "name": "revert",
+    "color": "d4c5f9",
+    "description": "Changes that reverts a previous commit"
+  },
+  {
+    "name": "spike",
+    "color": "fbca04",
+    "description": "Investigation needed"
+  },
+  {
+    "name": "test",
+    "color": "4f0fb9",
+    "description": "Changes that add missing tests or correcting existing tests",
+    "aliases": [
+      "tests"
+    ]
+  },
+  {
+    "name": "waiting for response",
+    "color": "c68654",
+    "description": "Waiting for follow up",
+    "aliases": [
+      "waiting for feedback"
+    ]
+  }
+]

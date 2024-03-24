@@ -3,7 +3,7 @@ name: Sync Labels Workflow
 on:
   push:
     paths:
-      - .github/labels.yml
+      - .github/labels.json
     branches:
       - main
   workflow_dispatch:
@@ -19,4 +19,4 @@ jobs:
       - name: 🚀 Run Label Sync
         uses: srealmoreno/label-sync-action@v1
         with:
-          config-file: ./github/labels.yml
+          config-file: ./github/labels.json
