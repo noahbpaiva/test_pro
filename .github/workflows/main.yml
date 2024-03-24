@@ -1,0 +1,16 @@
+name: My Flutter Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+    with:
+      setup: "flutter pub run build_runner build --delete-conflicting-outputs"
+      coverage_excludes: '*.g.dart'
+      flutter_channel: 'stable'
+      test_recursion: true
