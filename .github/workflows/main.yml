@@ -1,6 +1,7 @@
 name: My Flutter Workflow
 
 on:
+  pull_request:
   push:
     branches:
       - main
@@ -8,9 +9,32 @@ on:
 
 jobs:
   build:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
-    with:
-      setup: "flutter pub run build_runner build --delete-conflicting-outputs"
-      coverage_excludes: '*.g.dart'
-      flutter_channel: 'stable'
-      test_recursion: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📚 Git Checkout
+        uses: actions/checkout@v4
+
+      - name: 🌈 Setup Dart
+        uses: dart-lang/setup-dart@v1
+
+      - name: 🐦 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+          cache-key: flutter-:os:-:channel:-:version:-:arch:-:hash:-${{ hashFiles('**/pubspec.lock') }}
+
+      - name: 🚀 Install Dependencies
+        run: flutter pub get
+
+      - name: ⚙️ Run Build Runner
+        run: dart run build_runner build --delete-conflicting-outputs
+
+      - name: 🧹 Verify Formatting
+        run: dart format --output=none --set-exit-if-changed lib test
+
+      - name: 🕵️ Analyze
+        run: flutter analyze lib test
+
+      - name: 🧪 Run Tests
+        run: flutter test --coverage

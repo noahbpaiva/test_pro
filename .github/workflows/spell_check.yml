@@ -1,0 +1,15 @@
+name: Spell Check Workflow
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📚 Git Checkout
+        uses: actions/checkout@v4
+
+      - name: 🚀 Run Spell Check
+        uses: streetsidesoftware/cspell-action@v6
