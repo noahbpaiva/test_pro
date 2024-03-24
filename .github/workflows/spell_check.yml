@@ -16,3 +16,4 @@ jobs:
         with:
           config: .github/cspell.json
           root: ./lib
+          strict: true
