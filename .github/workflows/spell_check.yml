@@ -6,6 +6,9 @@ on:
 
 jobs:
   spellcheck:
+    defaults:
+      run:
+        working-directory: lib
     runs-on: ubuntu-latest
     steps:
       - name: 📚 Git Checkout
